@@ -1,0 +1,27 @@
+#!/bin/sh
+
+function setup() {
+    rm -Rf ./.tmp
+    mkdir ./.tmp
+    go get github.com/Gillespie59/tools/claat
+}
+
+function build(){
+    cat ./steps/step1.md ./steps/step2.md  ./steps/step3.md ./steps/step4.md ./steps/step5.md > ./.tmp/index.md
+    claat export  ./.tmp/index.md
+    pushd kube-codelab
+    claat install
+    popd
+}
+
+function deploy(){
+    pushd kube-codelab
+    firebase deploy
+    popd
+}
+
+function main() {
+  setup && build && deploy
+}
+
+main

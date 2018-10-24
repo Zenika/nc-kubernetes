@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "kube-codelab",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
