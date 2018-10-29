@@ -21,6 +21,5 @@ Durant ces deux heures, nous aborderons les bases de Kubernetes : comment défin
 Emmanuel DEMEY (Emmanuel Demey)
 Directeur technique chez Zenika Lille et Google Developer Expert, je suis spécialisé dans AngularJS / Angular / TypeScript et l'Accessibilité Web. Speaker à ses heures perdues. Aime également les bières (et oui quand on vient de Lille c'est normal...), le Jazz et la Domotique. Plusieurs expériences en tant que conférencier, notamment depuis septembre 2015 autour du sujet Angular2. - ESLint au Jug Summer Camp et ChtiJS - Angular 2 : ChtiJUG, LyonJS, GDG Paris, GDG Nantes, Meetup AngularJS Grenoble, Devoxx, RivieraDev, Bdx.io, DevFest Nantes, Codeurs en Seine
 
-Pierre (???)
-// TODO
-
+Pierre MALHERBE (Pierre Malherbe)
+Consultant Devops chez Zenika Lille, passionné par les problématiques d'architecture cloud ainsi que l'automatisation. J'aime comme mon compère les bières (notamment les IPA ! ), l'histoire et Patrick Bruel !
