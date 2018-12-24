@@ -1,8 +1,7 @@
 - [Step 1 - Pods et Deployment](https://github.com/Zenika/nc-kube/steps/step1.md)
 - [Step 2 - Services](https://github.com/Zenika/nc-kube/steps/step2.md)
-- [Step 3 - kubectl](https://github.com/Zenika/nc-kube/steps/step3.md)
-- [Step 4 - Scale up and down](https://github.com/Zenika/nc-kube/steps/step4.md)
-- [Step 5 - Client Graphique](https://github.com/Zenika/nc-kube/steps/step5.md)
+- [Step 3 - Scale up and down](https://github.com/Zenika/nc-kube/steps/step3.md)
+- [Step 4 - Client Graphique](https://github.com/Zenika/nc-kube/steps/step4.md)
 
 
 https://docs.google.com/presentation/d/1wJ3NYyklcbKfjemEE8RGdHh8o4NgUpONnioB8gKSYOg/edit#slide=id.p
