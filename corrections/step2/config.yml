@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nightclazz
+  labels:
+    app: nightclazz
+spec:
+  containers:
+    - name: nightclazz
+      image: gcr.io/google-samples/kubernetes-bootcamp:v1
+      imagePullPolicy: Always
+      
+      ports:
+      - containerPort: 8080
+  restartPolicy: Always

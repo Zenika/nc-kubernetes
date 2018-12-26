@@ -22,6 +22,15 @@ Positive
 
 - [Blabla](blabla)
 
+
+- Une fois Kubernetes installé, exécutez la commande suivante pour s'assurer que `kubectl` est bien accessible depuis votre terminal. 
+
+```shell
+kubectl --help
+```
+Vous devriez avoir toutes les commandes disponibles. Si vous souhaitez de l'information sur une commande en particulier, vous pouvez éxecuter la commande `kubtctl get notes --help` par exemple. 
+
+//////////// NOTES à supprimer
 $ kubectl help 
 > l’aide Kubernetes extrêmement bien faite !
 
