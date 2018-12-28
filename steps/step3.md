@@ -6,7 +6,7 @@ Positive
 - [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
 
 
-Verifions que nous avons nos `PODS` de disponible
+Vérifions que nous avons nos `PODS` de disponible
 
 ```shell
 kubectl get pods
@@ -18,9 +18,9 @@ Afin de voir nos différents services et avoir les informations de base, il suff
 kubectl get services
 ```
 Nous pouvons voir quelques informations importantes : 
-* l'ID du service qui sert à receuillir les différentes informations de celui-ci // A COMPLETER
+* l'ID du service qui sert à recueillir les différentes informations de celui-ci // A COMPLETER
 * Le type du service 
-  * `Cluster IP` : On ne peut acceder au service que dans le cluster
+  * `Cluster IP` : On ne peut accéder au service que dans le cluster
   * `NodePort` : 
   * `LoadBalancer` :
 * Le cluster IP : IP local
@@ -69,7 +69,7 @@ curl localhost:32181
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-5c69669756-x7jrp | v=1
 ```
 
-Nous savons maintenant créer un service de type NodePort sur notre applicaton Bootcamp.
+Nous savons maintenant créer un service de type NodePort sur notre application Bootcamp.
 
 Vous trouverez un descriptif des différents types de service kubernetes ici : https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what-922f010849e0
 
@@ -80,7 +80,7 @@ Les `labels` sont une partie importante de Kubernetes. Ils permettent d'organise
 
 Une bonne pratique est de nommer les différents environnements dans des labels, ou encore le type d'application (back,front, etc ...)
 
-Afin de voir ces differents informations, nous pouvons "décrire" nos deployments : 
+Afin de voir ces différentes informations, nous pouvons "décrire" nos déploiements : 
 
 ```shell
 kubectl describe deployment
@@ -116,7 +116,7 @@ Events:          <none>
 
  Ici le pod est dans le namespace "default", et il dispose d'un `label` "run=kubernetes-bootcamp"
 
-Pour selectionner les pods d'un label, nous pouvons executer la commande suivante : 
+Pour sélectionner les pods d'un label, nous pouvons exécuter la commande suivante : 
 
 ```shell
 kubectl get pods -l run=kubernetes-bootcamp
@@ -185,9 +185,9 @@ kubectl get pods -l env=pprod
 
 ## SCALE :
 
-Le scalling d'application est une notion importante de Kubernetes. Il permet d'avoir plusieurs `réplicats` de notre POD Kubernetes suivant la charge ou la politique de déploiement d'une application. 
+Le scalling d'application est une notion importante de Kubernetes. Il permet d'avoir plusieurs `réplicas` de notre POD Kubernetes suivant la charge ou la politique de déploiement d'une application. 
 
-Nous pouvons voir les `réplicats` avec la commande suivante : 
+Nous pouvons voir les `réplicas` avec la commande suivante : 
 
 ```shell
  kubectl get deployments
@@ -197,18 +197,18 @@ kubernetes-bootcamp     1         1         1            1           4d
 
 Pour information :
 
-* DESIRED : Montre le nombre de replicats configuré 
-* CURRENT : Montre le nombre de replicats disponible à l'execution de la commande
-* UP-TO-DATE : Montre les réplicats à jours
-* AVAILABLE : Montre les réplicats disponible pour les utilisateurs
+* DESIRED : Montre le nombre de réplicas configuré 
+* CURRENT : Montre le nombre de réplicas disponible à l'execution de la commande
+* UP-TO-DATE : Montre les réplicas à jours
+* AVAILABLE : Montre les réplicas disponible pour les utilisateurs
 
-Afin d'augmenter le nombre de réplicats, rien de plus simple avec la commande `scale` : 
+Afin d'augmenter le nombre de réplicas, rien de plus simple avec la commande `scale` : 
 
 ```shell
 kubectl scale deployments/kubernetes-bootcamp --replicas=4
 ```
 
-Nous pouvons voir la bonne execution de celle-ci : 
+Nous pouvons voir la bonne exécution de celle-ci : 
 
 ```shell
 kubectl get deployments
@@ -227,9 +227,9 @@ kubernetes-bootcamp-5c69669756-lrptf     1/1       Running   0          49s     
 kubernetes-bootcamp-5c69669756-qx86r     1/1       Running   0          49s       10.1.0.7   docker-for-desktop
 ```
 
-Nous avons bien 4 replicats de l'application bootcamp.
+Nous avons bien 4 réplicas de l'application bootcamp.
 
-De base Kubernetes gére les réplicats avec un LoadBalancing, avec Istio et d'autres composants nous pouvons régler cette logique avec du canary release par exemple.
+De base Kubernetes gère les réplicas avec un LoadBalancing, avec Istio et d'autres composants nous pouvons régler cette logique avec du canary release par exemple.
 
 ```shell
 curl localhost:32181
@@ -252,7 +252,7 @@ C:\tools\Cmder
 Hello Kubernetes bootcamp! | Running on: kubernetes-bootcamp-5c69669756-x7jrp | v=1
 ```
 
-Pour la suite du TP nous allons revenir à un replicas afin de garder des resources : 
+Pour la suite du TP nous allons revenir à un réplicas afin de garder des resources : 
 
 ```shell
 kubectl scale deployments/kubernetes-bootcamp --replicas=2
@@ -269,7 +269,7 @@ kubernetes-bootcamp-1-684564d696-mqlvd   1/1       Running   0          4d      
 
 ## UPDATE :
 
-Une des grosse force de Kubernetes est de pouvoir faire du `rolling update` afin d'avoir le moins possible de `Downtime`.
+Une des grosses forces de Kubernetes est de pouvoir faire du `rolling update` afin d'avoir le moins possible de `Downtime`.
 Attention, des vérifications doivent être effectué avant, avec des tests d'intégrations/unitaires ...
 
 ```shell
@@ -315,13 +315,13 @@ Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
 Events:          <none>
 ```
 
-Nous pouvons voir que l'imge ici est en version 1, afin de passer en version 2:
+Nous pouvons voir que l'image ici est en version 1, afin de passer en version 2:
 
 ```shell
 kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
 ```
 
-Vous pouvez voir que le nouveau POD se met à jour avant d'eteindre celui en version 1 afin d'être toujours disponible. C'est ce qu'on appelle le `rolling update` :
+Vous pouvez voir que le nouveau POD se met à jour avant d'éteindre celui en version 1 afin d'être toujours disponible. C'est ce qu'on appelle le `rolling update` :
 
 
 ```shell

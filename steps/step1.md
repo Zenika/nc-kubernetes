@@ -30,17 +30,17 @@ Une fois Kubernetes installé, exécutez la commande suivante pour s'assurer que
 ```shell
 kubectl --help
 ```
-Vous devriez avoir toutes les commandes disponibles. Si vous souhaitez de l'information sur une commande en particulier, vous pouvez éxecuter la commande `kubtctl get notes --help` par exemple. 
+Vous devriez avoir toutes les commandes disponibles. Si vous souhaitez de l'information sur une commande en particulier, vous pouvez exécuter la commande `kubtctl get notes --help` par exemple. 
 
-Afin de nous aider et de visualiser les travaux que nous allons faire, nous allons déployer l'interface graphique de Kubernetes. Nous rentrerons dans les détails par la suite (notamment du fichier de dployment)
+Afin de nous aider et de visualiser les travaux que nous allons faire, nous allons déployer l'interface graphique de Kubernetes. Nous rentrerons dans les détails par la suite (notamment du fichier de deployment)
 
-Pour créer une resource à partir d'un fichier nous allons simplement utiliser la commande :
+Pour créer une ressource à partir d'un fichier nous allons simplement utiliser la commande :
 
 ```shell
 kubectl create -f file
 ```
 
-Kubernetes à mis en place un fichier de deploiement pour le dashboard à l'adresse suivante : https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
+Kubernetes a mis en place un fichier de déploiement pour le dashboard à l'adresse suivante : https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
 
 Nous allons simplement faire la commande suivante afin de créer la ressource : 
 
@@ -48,13 +48,13 @@ Nous allons simplement faire la commande suivante afin de créer la ressource :
 kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
 ```
 
-Afin d'acceder en ligne à notre service Kubernetes et notamment utiliser l'API Kubernetes, nous allons utiliser la notion du `proxy` Kubernetes. Pour cela rien de plus simple : 
+Afin d'accéder en ligne à l'API Kubernetes, nous allons utiliser la notion du `proxy` Kubernetes. Pour cela rien de plus simple : 
 
 ```shell
 kubectl proxy
 ```
 
-Notez que vous pouvez specifier un `port` précis avec l'argument suivant :
+Notez que vous pouvez spécifier un `port` précis avec l'argument suivant :
 
 ```shell
 kubectl proxy --port=8080
@@ -78,7 +78,7 @@ curl http://localhost:8080/api/
 }
 ```
 
-Avec cette API nous pouvons acceder à toutes nos resources Kubernetes, par exemple nous pouvons accéder aux pod avec le endpoint suivant : 
+Avec cette API nous pouvons accéder à toutes nos ressources Kubernetes, par exemple nous pouvons accéder aux pod avec le endpoint suivant : 
 
 ```shell
 curl http://localhost:8080/api/v1/namespaces/default/pods
@@ -90,13 +90,13 @@ http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-da
 
 Attention une authentification est requise avec le dashboard, pour cela nous allons voir la notion des `secrets`. Nous ne rentrerons pas dans les détails durant se tp.
 
-Pour avoir accés aux secrets Kubernetes, il suffit de faire la commande 
+Pour avoir accès aux secrets Kubernetes, il suffit de faire la commande :
 
 ```shell
  kubectl get secret
 ```
 
-Cependant le token du dashboard est disponible dans la resource "kubernetes-dashboard-token-xxx" qui se situe dans le namespace "kube-system".
+Cependant le token du dashboard est disponible dans la ressource "kubernetes-dashboard-token-xxx" qui se situe dans le namespace "kube-system".
 
 Pour cela il faut faire :
 
@@ -104,7 +104,7 @@ Pour cela il faut faire :
 kubectl -n kube-system get secret
 ```
 
-Afin d'acceder aux détails de notre objet "secret", il faut copier l'ID de celui ci et de détailler les differentes informations avec la commande suivante : 
+Afin d'accéder aux détails de notre objet "secret", il faut copier l'ID de celui-ci et de détailler les différentes informations avec la commande suivante : 
 
 ```shell
 kubectl -n kube-system describe secret replicaset-controller-token-xxxx
