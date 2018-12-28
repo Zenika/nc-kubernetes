@@ -56,3 +56,10 @@ kubectl expose deployment nightclazz --type LoadBalancer --port 8080 --target-po
 Dans la console GCP, vous devriez voir votre `Service` en cours de création via la page https://console.cloud.google.com/kubernetes/discovery.
 
 - Depuis cette page et l'adresse IP affichée, vous devriez avoir accès à votre application. Si vous raffraichissez votre page, vous allez accéder à un `pod` différent.
+
+- Une fois terminer, vous pouvez supprimer les ressources crées
+
+```shell
+kubectl delete service nightclazz
+kubectl container clusters delete nightclazz
+```
