@@ -20,15 +20,14 @@ kubectl get services
 Nous pouvons voir quelques informations importantes : 
 * l'ID du service qui sert à recueillir les différentes informations de celui-ci // A COMPLETER
 * Le type du service 
-  * `Cluster IP` : On ne peut accéder au service que dans le cluster
-  * `NodePort` : 
-  * `LoadBalancer` :
+  * `NodePort` : Kubernetes réserve un port sur tous ses noeuds et redirige le trafic qui arrive sur ce port vers le service concerné
+  * `LoadBalancer` : Kubernetes intéragi avec l'api du provider pour provisionner automatiquement un loadbalanceur.
 * Le cluster IP : IP local
 * External IP : IP externe
 * PORT : les différents ports exposés
 * AGE : L'uptime de votre service
 
-Afin de créer un service avec notre application de type `NodePort` sur le port 8080, il suffit de faire la commande suivante : 
+Nous allons créer un service de type `NodePort` sur le port 8080 : 
 
 ```shell
 kubectl expose deployment/kubernetes-bootcamp --type="NodePort" --port 8080
@@ -40,7 +39,7 @@ Vous pouvez observer que notre service a bien été créer avec la commande suiv
  kubectl get services
 ```
 
-Afin d'avoir les informations de votre service, vous devez utiliser la commande `describe`.
+Afin d'avoir les informations de notre nouveau service, utilisez la notion `describe`.
 
 ```shell
 λ  kubectl describe services/kubernetes-bootcamp
@@ -80,7 +79,7 @@ Les `labels` sont une partie importante de Kubernetes. Ils permettent d'organise
 
 Une bonne pratique est de nommer les différents environnements dans des labels, ou encore le type d'application (back,front, etc ...)
 
-Afin de voir ces différentes informations, nous pouvons "décrire" nos déploiements : 
+Vous pouvez voir les différents label avec :
 
 ```shell
 kubectl describe deployment
@@ -177,7 +176,7 @@ Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
 Events:          <none>
 ```
 
-Pour lister les pods d'un label : 
+Pour lister tous les pods qui appartiennent à un label : 
 
 ```shell
 kubectl get pods -l env=pprod

@@ -17,7 +17,7 @@ Pour installer Docker et Kubernets, vous pouvez utiliser par exemple
 https://docs.docker.com/install/linux/docker-ce/ubuntu/
 https://kubernetes.io/docs/getting-started-guides/ubuntu/installation/
 
-## Installation
+## Introduction
 
 Positive
 : Voici la documentation utile pour cette étape
@@ -32,9 +32,13 @@ kubectl --help
 ```
 Vous devriez avoir toutes les commandes disponibles. Si vous souhaitez de l'information sur une commande en particulier, vous pouvez exécuter la commande `kubtctl get notes --help` par exemple. 
 
-Afin de nous aider et de visualiser les travaux que nous allons faire, nous allons déployer l'interface graphique de Kubernetes. Nous rentrerons dans les détails par la suite (notamment du fichier de deployment)
 
-Pour créer une ressource à partir d'un fichier nous allons simplement utiliser la commande :
+## WebUI
+
+Afin de visualiser les travaux que nous allons faire, nous allons déployer l'interface graphique de Kubernetes. 
+(Nous détaillerons le fichier de déploiement par la suite)
+
+Pour créer une ressource à partir d'un fichier nous allons utiliser l'outil de création d'un `deployment` de kubernetes :
 
 ```shell
 kubectl create -f file
@@ -42,13 +46,13 @@ kubectl create -f file
 
 Kubernetes a mis en place un fichier de déploiement pour le dashboard à l'adresse suivante : https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
 
-Nous allons simplement faire la commande suivante afin de créer la ressource : 
+Nous allons simplement créer une resource avec le fichier de `deployment` fournis par Kubernetes : 
 
 ```shell
 kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/aio/deploy/recommended/kubernetes-dashboard.yaml
 ```
 
-Afin d'accéder en ligne à l'API Kubernetes, nous allons utiliser la notion du `proxy` Kubernetes. Pour cela rien de plus simple : 
+Afin d'accéder à l'API Kubernetes, nous allons utiliser la notion de `proxy` de Kubernetes.
 
 ```shell
 kubectl proxy
@@ -88,7 +92,7 @@ Nous pouvons acceder au Dashboard avec l'url suivante :
 http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/ 
 
 
-Attention une authentification est requise avec le dashboard, pour cela nous allons voir la notion des `secrets`. Nous ne rentrerons pas dans les détails durant se tp.
+Attention une authentification est requise avec le dashboard, pour cela nous allons récuperer le token dans un `secret`. (Nous ne rentrerons pas dans les détails durant se tp.)
 
 Pour avoir accès aux secrets Kubernetes, il suffit de faire la commande :
 
