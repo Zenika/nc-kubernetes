@@ -77,9 +77,9 @@ Vous trouverez un descriptif des différents types de service kubernetes ici : h
 
 Les `labels` sont une partie importante de Kubernetes. Ils permettent d'organiser nos PODS suivant notre politique de déploiement.
 
-Une bonne pratique est de nommer les différents environnements dans des labels, ou encore le type d'application (back,front, etc ...)
+Une bonne pratique est de nommer les différents environnements avec des labels, comme par exemple le type d'application (back,front, etc ...)
 
-Vous pouvez voir les différents label avec :
+Vous pouvez voir les différents labels avec :
 
 ```shell
 kubectl describe deployment
@@ -189,7 +189,7 @@ Le scalling d'application est une notion importante de Kubernetes. Il permet d'a
 Nous pouvons voir les `réplicas` avec la commande suivante : 
 
 ```shell
- kubectl get deployments
+kubectl get deployments
 NAME                    DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
 kubernetes-bootcamp     1         1         1            1           4d
 ```
