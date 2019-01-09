@@ -1,9 +1,10 @@
-## Les Services
+## Les Services et Deployment
 
 Positive
 : Voici la documentation utile pour cette étape
 
 - [Service](https://kubernetes.io/docs/concepts/services-networking/service/)
+- [Deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
 
 
 Vérifions que nous avons nos `PODS` de disponible
