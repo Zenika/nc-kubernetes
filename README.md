@@ -1,7 +1,7 @@
-- [Step 1 - Introduction et Dashboard](https://github.com/Zenika/nc-kube/steps/step1.md)
-- [Step 2 - Intéraction avec un POD](https://github.com/Zenika/nc-kube/steps/step2.md)
-- [Step 3 - Introduction aux services](https://github.com/Zenika/nc-kube/steps/step3.md)
-- [Step 4 - Démonstration GKE](https://github.com/Zenika/nc-kube/steps/step4.md)
+- [Step 1 - Introduction et Dashboard](https://github.com/Zenika/nc-kubernetes/steps/step1.md)
+- [Step 2 - Intéraction avec un POD](https://github.com/Zenika/nc-kubernetes/steps/step2.md)
+- [Step 3 - Introduction aux services](https://github.com/Zenika/nc-kubernetes/steps/step3.md)
+- [Step 4 - Démonstration GKE](https://github.com/Zenika/nc-kubernetes/steps/step4.md)
 
 
 https://docs.google.com/presentation/d/1wJ3NYyklcbKfjemEE8RGdHh8o4NgUpONnioB8gKSYOg/edit#slide=id.p
