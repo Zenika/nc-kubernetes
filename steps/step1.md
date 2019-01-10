@@ -63,11 +63,12 @@ Notez que vous pouvez spécifier un `port` précis avec l'argument suivant :
 ```shell
 kubectl proxy --port=8080
 ```
+(On utilise le port par défaut pour la suite du tp)
 
 Afin de vérifier le bon fonctionnement de notre proxy nous pouvons effectuer un appel à celui-ci : 
 
 ```shell
-curl http://localhost:8080/api/            
+curl http://localhost:8001/api/            
 {
   "kind": "APIVersions",
   "versions": [
@@ -85,7 +86,7 @@ curl http://localhost:8080/api/
 Avec cette API nous pouvons accéder à toutes nos ressources Kubernetes, par exemple nous pouvons accéder aux pod avec le endpoint suivant : 
 
 ```shell
-curl http://localhost:8080/api/v1/namespaces/default/pods
+curl http://localhost:8001/api/v1/namespaces/default/pods
 ```
 
 Nous pouvons acceder au Dashboard avec l'url suivante : 
