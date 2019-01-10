@@ -19,7 +19,7 @@ Afin de voir nos différents services et avoir les informations de base, il suff
 kubectl get services
 ```
 Nous pouvons voir quelques informations importantes : 
-* l'ID du service qui sert à recueillir les différentes informations de celui-ci // A COMPLETER
+* l'ID du service qui sert à recueillir les différentes informations de celui-ci 
 * Le type du service 
   * `NodePort` : Kubernetes réserve un port sur tous ses noeuds et redirige le trafic qui arrive sur ce port vers le service concerné
   * `LoadBalancer` : Kubernetes intéragi avec l'api du provider pour provisionner automatiquement un loadbalanceur.
